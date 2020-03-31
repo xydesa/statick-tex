@@ -72,6 +72,11 @@ jobs:
         with:
           docs-folder: "docs/"
 
+      - name: Build documentation
+        run: |
+          cd docs
+          make html
+
       - name: Publish documentation
         uses: JacksonMaxfield/github-pages-deploy-action-python@master
         env:
