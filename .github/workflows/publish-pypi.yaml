@@ -67,15 +67,10 @@ jobs:
         with:
           password: ${{ secrets.PYPI_TOKEN }}
 
-      - name: Sphinx lint
+      - name: Sphinx build and lint
         uses: ammaraskar/sphinx-action@master
         with:
           docs-folder: "docs/"
-
-      - name: Build documentation
-        run: |
-          cd docs
-          make html
 
       - name: Publish documentation
         uses: JacksonMaxfield/github-pages-deploy-action-python@master
